@@ -61,7 +61,7 @@ module.exports = {
               // options for the v4 of css-loader
               modules: {
                 exportLocalsConvention: "camelCaseOnly",
-                localIdentName: "[local]",
+                localIdentName: "[name]__[local]___[hash:base64:5]",
               },
             },
           },
