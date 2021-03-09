@@ -52,7 +52,7 @@ const CountryCard: React.FC = () => {
                         }}
                     >
                         <Typography gutterBottom variant="h5" component="h2">
-                            Название старны
+                            Название страны
                         </Typography>
                         <Typography>Столица: Название столицы</Typography>
                     </CardContent>
