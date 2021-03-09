@@ -7,7 +7,8 @@
         "dev": "rimraf dist && webpack serve --config config/webpack.dev.js --progress --profile",
         "prod": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
         "prepare": "husky install",
-        "lint": "eslint ./src --color"
+        "lint2": "eslint ./src --color",
+        "lint": "eslint ./src --fix --color"
     },
     "dependencies": {
         "react": "^17.0.1",
