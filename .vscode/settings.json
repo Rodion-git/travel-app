@@ -1,9 +1,9 @@
 {
 "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": false
+      "source.fixAll.eslint": true
     },
     "editor.renderWhitespace": "all",
     "[html]": {
