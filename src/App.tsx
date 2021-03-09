@@ -2,8 +2,6 @@ import React from "react";
 
 import styles from "./app.scss";
 
-const param = 1;
-
 const   App   :   React.FC = () => {
     return <div className={styles.helloText}>Hello Travel App
     
