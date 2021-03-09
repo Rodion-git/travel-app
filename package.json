@@ -52,8 +52,7 @@
     },
     "lint-staged": {
         "*.{ts, tsx}": [
-            "prettier --write --color",
-            "git add"
+            "prettier --write --color"
         ]
     },
     "browserslist": {
