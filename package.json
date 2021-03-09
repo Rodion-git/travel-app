@@ -49,6 +49,18 @@
         "webpack-dev-server": "^3.11.2",
         "webpack-merge": "^5.3.0"
     },
+    "husky" :{
+        "hooks":{
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts, tsx}": [
+          "node_modules/.bin/eslint --max-warnings=0",
+          "prettier --write",
+          "git add"
+        ]
+    },
     "browserslist": {
         "production": [
             ">0.2%",
