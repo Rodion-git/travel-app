@@ -6,10 +6,11 @@
     "scripts": {
         "dev": "rimraf dist && webpack serve --config config/webpack.dev.js --progress --profile",
         "prod": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-        "prepare": "husky install",
         "lint": "eslint ./src --color"
     },
     "dependencies": {
+        "@material-ui/core": "^4.11.3",
+        "@material-ui/icons": "^4.11.2",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-router-dom": "^5.2.0"

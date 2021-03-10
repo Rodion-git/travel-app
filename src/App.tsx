@@ -1,13 +1,14 @@
 import React from "react";
+
+import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 
 import styles from "./app.scss";
 import { CountryCard } from "./components/CountryCard";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -129,7 +130,6 @@ const App: React.FC = () => {
             <Footer />
         </React.Fragment>
     );
-
 };
 
 export default App;
