@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const CountryCard: React.FC = () => {
+export const CountryCard: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -54,12 +54,10 @@ const CountryCard: React.FC = () => {
                         <Typography gutterBottom variant="h5" component="h2">
                             Название страны
                         </Typography>
-                        <Typography>Столица: Название столицы</Typography>
+                        <Typography>Сyтолица: Название столицы</Typography>
                     </CardContent>
                 </Card>
             </Link>
         </Grid>
     );
 };
-
-export default CountryCard;

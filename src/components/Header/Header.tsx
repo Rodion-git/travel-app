@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import LocationCity from "@material-ui/icons/LocationCity";
-import SearchInput from "./SearchInput/SearchInput";
+import { SearchInput } from "./SearchInput";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -45,5 +45,3 @@ const Header: React.FC = () => {
         </div>
     );
 };
-
-export default Header;

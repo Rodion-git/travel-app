@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SearchInput: React.FC = () => {
+export const SearchInput: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -64,5 +64,3 @@ const SearchInput: React.FC = () => {
         </div>
     );
 };
-
-export default SearchInput;

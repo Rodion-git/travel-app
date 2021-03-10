@@ -3,11 +3,11 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 import styles from "./app.scss";
-import CountryCard from "./components/CountryCard/CountryCard";
+import { CountryCard } from "./components/CountryCard";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -32,19 +32,6 @@ const cards = [
     },
     {
         id: 2,
-        country: {
-            ru: "Республика Беларусь",
-            en: "Republic of Belarus",
-            be: "Рэспубліка Беларусь",
-        },
-        capital: {
-            ru: "Минск",
-            en: "Minsk",
-            be: "Мінск",
-        },
-    },
-    {
-        id: 3,
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
