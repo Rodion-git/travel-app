@@ -129,6 +129,7 @@ const App: React.FC = () => {
             <Footer />
         </React.Fragment>
     );
+
 };
 
 export default App;
