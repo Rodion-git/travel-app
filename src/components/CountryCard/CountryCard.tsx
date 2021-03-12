@@ -14,11 +14,6 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         borderRadius: "10px",
-
-        // "&:hover": {
-        //     border: "3px solid blue",
-        //     cursor: "pointer",
-        // },
     },
     cardMedia: {
         paddingTop: "56.25%", // 16:9
@@ -41,7 +36,7 @@ export const CountryCard: React.FC<CountryCardProps> = ({ countryObj }) => {
                 <Card className={classes.card}>
                     <CardMedia
                         className={classes.cardMedia}
-                        image={`${countryObj.image}`}
+                        image={countryObj.image}
                         title={countryObj.country}
                     />
                     <CardContent
