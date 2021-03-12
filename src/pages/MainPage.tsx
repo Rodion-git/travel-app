@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import cards from "../consts/data";
 
 import { CountryCard } from "../components/CountryCard";
+import { ICountry } from "../entities/interfaces";
+import { DBUtils } from "../services/DBUtils";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -15,12 +17,18 @@ const useStyles = makeStyles((theme) => ({
 
 const MainPage: React.FC = () => {
     const classes = useStyles();
+    const [data, setData] = useState<ICountry[]>([]);
+
+    useEffect(() => {
+        const arr = DBUtils.getCountryListByLang("be");
+        setData(arr);
+    }, []);
 
     return (
         <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>
-                {cards.map((card) => (
-                    <CountryCard />
+                {data.map((country) => (
+                    <CountryCard countryObj={country} />
                 ))}
             </Grid>
         </Container>

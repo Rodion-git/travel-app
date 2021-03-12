@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
 const App: React.FC = () => {
     const classes = useStyles();
 
-    console.log(DBUtils.getCountryListByLang("be"));
-
     return (
         <Router>
             <React.Fragment>

@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 import {
+    useParams,
     BrowserRouter as Router,
     Switch,
     Route,
@@ -11,6 +12,8 @@ import {
 } from "react-router-dom";
 
 const CountryPage: React.FC = () => {
+    // const { id } = useParams();
+
     return <h1>Country Page</h1>;
 };
 

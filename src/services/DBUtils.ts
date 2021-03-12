@@ -3,7 +3,7 @@ import {ICountry, Lang} from "../entities/interfaces";
 
 export class DBUtils {
 
-    static getCountryObjectByLang(id: number, lang: Lang): ICountry {
+    static getCountryObjectByLang(id: string, lang: Lang): ICountry {
         const arr = data.filter(item => item.id === id);
         const obj = arr[0];
         const attractionNew = obj.attractionList.map((item) => {

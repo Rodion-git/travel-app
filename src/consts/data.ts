@@ -1,6 +1,6 @@
 export default [
      {
-        id: 1,
+        id: "1",
         currId: '1',
         country: {
             ru: "Республика Беларусь",
@@ -17,7 +17,7 @@ export default [
             en: "Country Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             be: "Апісанне Краіны. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
         },
-        image: 'country-main.jpg',
+        image: 'https://source.unsplash.com/random',
         attractionList: [
             {
                 image: '1.jpg',
@@ -48,7 +48,7 @@ export default [
     },
 
     {
-        id: 2,
+        id: "2",
         currId: '2',
         country: {
             ru: "Республика Беларусь",
@@ -65,7 +65,7 @@ export default [
             en: "Country Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             be: "Апісанне Краіны. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
         },
-        image: 'country-main.jpg',
+        image: 'https://source.unsplash.com/random',
         attractionList: [
             {
                 image: '1.jpg',
@@ -96,7 +96,7 @@ export default [
     },
 
     {
-        id: 3,
+        id: "3",
         currId: '3',
         country: {
             ru: "Республика Беларусь",
@@ -113,7 +113,7 @@ export default [
             en: "Country Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             be: "Апісанне Краіны. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
         },
-        image: 'country-main.jpg',
+        image: 'https://source.unsplash.com/random',
         attractionList: [
             {
                 image: '1.jpg',

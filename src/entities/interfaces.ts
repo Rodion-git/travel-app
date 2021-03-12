@@ -6,7 +6,7 @@ export interface IAttraction {
 }
 
 export interface ICountry {
-    id: number,
+    id: string,
     currId: string,
     country: string,
     capital: string,
