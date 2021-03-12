@@ -1,21 +1,17 @@
-export interface ITranslate {
-    en: string,
-    ru: string,
-    be: string
-}
+export type Lang = 'en' | 'ru' | 'be';
 
 export interface IAttraction {
     image: string,
-    description: ITranslate
+    description: string
 }
 
 export interface ICountry {
     id: number,
-    country: ITranslate,
-    capital: ITranslate,
-    description: ITranslate,
+    currId: string,
+    country: string,
+    capital: string,
+    description: string,
     image: string,
     attractionList: IAttraction[],
     videoId: string
-
 }

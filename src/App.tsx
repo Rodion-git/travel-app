@@ -1,21 +1,12 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import cards from "./consts/data";
+import { DBUtils } from "./services/DBUtils";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import styles from "./app.scss";
-import { CountryCard } from "./components/CountryCard";
 import MainPage from "./pages/MainPage";
 import CountryPage from "./pages/СountryPage";
 
@@ -28,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
 
 const App: React.FC = () => {
     const classes = useStyles();
+
+    console.log(DBUtils.getCountryListByLang("be"));
 
     return (
         <Router>
