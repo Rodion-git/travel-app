@@ -27,11 +27,7 @@ const App: React.FC = () => {
                 <Header />
                 <main>
                     <Switch>
-                        <Route
-                            component={CountryPage}
-                            exact
-                            path="/country/:id"
-                        />
+                        <Route component={CountryPage} path="/country/:id" />
                         <Route component={MainPage} exact path="/" />
                     </Switch>
                 </main>

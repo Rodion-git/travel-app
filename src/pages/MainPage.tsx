@@ -28,7 +28,7 @@ const MainPage: React.FC = () => {
         <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>
                 {data.map((country) => (
-                    <CountryCard countryObj={country} />
+                    <CountryCard key={country.id} countryObj={country} />
                 ))}
             </Grid>
         </Container>

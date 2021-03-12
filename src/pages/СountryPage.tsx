@@ -12,9 +12,9 @@ import {
 } from "react-router-dom";
 
 const CountryPage: React.FC = () => {
-    // const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
 
-    return <h1>Country Page</h1>;
+    return <h1>Country Page ID = {id} </h1>;
 };
 
 export default CountryPage;
