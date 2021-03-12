@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import cards from "../consts/data";
 
 import { CountryCard } from "../components/CountryCard";
 import { ICountry } from "../entities/interfaces";
