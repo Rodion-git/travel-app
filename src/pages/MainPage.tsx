@@ -16,17 +16,17 @@ const useStyles = makeStyles((theme) => ({
 
 const MainPage: React.FC = () => {
     const classes = useStyles();
-    const [data, setData] = useState<ICountry[]>([]);
+    const [countryList, setCountryList] = useState<ICountry[]>([]);
 
     useEffect(() => {
         const arr = DBUtils.getCountryListByLang("be");
-        setData(arr);
+        setCountryList(arr);
     }, []);
 
     return (
         <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>
-                {data.map((country) => (
+                {countryList.map((country) => (
                     <CountryCard key={country.id} countryObj={country} />
                 ))}
             </Grid>

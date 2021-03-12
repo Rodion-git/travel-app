@@ -7,7 +7,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
 import { Link } from "react-router-dom";
 import { ICountry } from "../../entities/interfaces";
-// import "./countryCard.scss";
 
 const useStyles = makeStyles((theme) => ({
     card: {
