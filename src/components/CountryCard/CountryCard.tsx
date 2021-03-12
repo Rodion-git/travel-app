@@ -5,13 +5,10 @@ import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+// import "./countryCard.scss";
 
 const useStyles = makeStyles((theme) => ({
-    cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
-    },
     card: {
         height: "100%",
         display: "flex",
@@ -38,7 +35,7 @@ export const CountryCard: React.FC = () => {
 
     return (
         <Grid item key="1" xs={12} sm={6} md={4}>
-            <Link href="#">
+            <Link to={`/country/${1}`}>
                 <Card className={classes.card}>
                     <CardMedia
                         className={classes.cardMedia}
@@ -54,7 +51,7 @@ export const CountryCard: React.FC = () => {
                         <Typography gutterBottom variant="h5" component="h2">
                             Название страны
                         </Typography>
-                        <Typography>Сyтолица: Название столицы</Typography>
+                        <Typography>Столица: Название столицы</Typography>
                     </CardContent>
                 </Card>
             </Link>
