@@ -1,13 +1,19 @@
 import React from "react";
+
+import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import MainPage from "./pages/MainPage";
 import CountryPage from "./pages/СountryPage";
+
+import styles from "./app.scss";
+import { CountryCard } from "./components/CountryCard";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
