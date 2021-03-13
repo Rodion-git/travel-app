@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import { Header } from "./components/Header";
@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import MainPage from "./pages/MainPage";
 import CountryPage from "./pages/СountryPage";
+import { DBUtils } from "./services/DBUtils";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {

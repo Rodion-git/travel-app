@@ -15,3 +15,12 @@ export interface ICountry {
     attractionList: IAttraction[],
     videoId: string
 }
+
+export interface ICurrency {
+    id: string,
+    name: string,
+    scale: string,
+    usdRate: string,
+    eurRate: string,
+    bynRate: string
+}
