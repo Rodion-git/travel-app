@@ -10,6 +10,7 @@ module.exports = webpackMerge(commonConfig, {
   output: {
     path: helpers.root("dist"),
     filename: "[name].js",
+    publicPath: "/"
   },
 
   plugins: [
