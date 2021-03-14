@@ -1,9 +1,11 @@
 import React from "react";
+
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 
-const useStyles = makeStyles((theme) => ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const useStyles = makeStyles((theme: any) => ({
     search: {
         position: "relative",
         borderRadius: theme.shape.borderRadius,
