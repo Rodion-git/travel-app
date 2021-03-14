@@ -21,6 +21,11 @@ export default [
         attractionList: [
             {
                 image: '1.jpg',
+                title: {
+                  ru: "Привет",
+                  en: "Hello",
+                  be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 1",
                     en: "Attraction Description 1",
@@ -29,6 +34,11 @@ export default [
             },
             {
                 image: '2.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 2",
                     en: "Attraction Description 2",
@@ -37,6 +47,11 @@ export default [
             },
             {
                 image: '3.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 3",
                     en: "Attraction Description 3",
@@ -69,6 +84,11 @@ export default [
         attractionList: [
             {
                 image: '1.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 1",
                     en: "Attraction Description 1",
@@ -77,6 +97,11 @@ export default [
             },
             {
                 image: '2.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 2",
                     en: "Attraction Description 2",
@@ -85,6 +110,11 @@ export default [
             },
             {
                 image: '3.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 3",
                     en: "Attraction Description 3",
@@ -94,6 +124,7 @@ export default [
         ],
         videoId: 'SaTOst5utL8'
     },
+
 
     {
         id: "3",
@@ -117,6 +148,11 @@ export default [
         attractionList: [
             {
                 image: '1.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 1",
                     en: "Attraction Description 1",
@@ -125,6 +161,11 @@ export default [
             },
             {
                 image: '2.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 2",
                     en: "Attraction Description 2",
@@ -133,6 +174,11 @@ export default [
             },
             {
                 image: '3.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 3",
                     en: "Attraction Description 3",
@@ -142,4 +188,5 @@ export default [
         ],
         videoId: 'SaTOst5utL8'
     },
+
 ];

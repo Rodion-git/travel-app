@@ -15,7 +15,7 @@ export class DBUtils {
         const arr = data.filter(item => item.id === id);
         const obj = arr[0];
         const attractionNew = obj.attractionList.map((item) => {
-            return {image: item.image, description: item.description[lang]}
+            return {image: item.image, title: item.title[lang], description: item.description[lang]}
         })
 
         return {
@@ -62,7 +62,7 @@ export class DBUtils {
     }
 
     static async getCurrencyRate(id: string) {
-        const byn = await fetch(NBRB_CURRENCY_RATE_URL + id)
+        const byn = await fetch(NBRB_CURRENCY_RATE_URL + id);
         const bynData = await byn.json();
         const bynDataRate = bynData.Cur_OfficialRate;
 
