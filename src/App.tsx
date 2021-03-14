@@ -1,6 +1,6 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import Container from "@material-ui/core/Container";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import MainPage from "./pages/MainPage";
 import CountryPage from "./pages/СountryPage";
+import { DBUtils } from "./services/DBUtils";
 
 import styles from "./app.scss";
 import { CountryCard } from "./components/CountryCard";
