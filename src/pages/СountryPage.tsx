@@ -3,25 +3,19 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ICurrency } from "../entities/interfaces";
 import { DBUtils } from "../services/DBUtils";
+import {CurrencyWidget} from "../components/CurrencyWidget/CurrencyWidget";
 
 const CountryPage: React.FC = () => {
-    const [currencyData, setCurrencyData] = useState<ICurrency>();
     const { id } = useParams<{ id: string }>();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await DBUtils.getCurrencyObj("290", "be");
-
-            setCurrencyData(result);
-        };
-
-        fetchData();
-    }, []);
-
     return (
-        <h1>
-            Country Page ID = {id}
-        </h1>
+        <>
+            <h1>
+                Country Page ID = {id}
+            </h1>
+
+            <CurrencyWidget countryid={id} />
+        </>
     );
 };
 
