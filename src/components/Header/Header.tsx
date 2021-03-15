@@ -6,6 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import LocationCity from "@material-ui/icons/LocationCity";
 
+import { Language } from "./Language";
 import { SearchInput } from "./SearchInput";
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+    onLanguageChange: (lang: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     const classes = useStyles();
 
     return (
@@ -32,6 +37,7 @@ export const Header: React.FC = () => {
             <AppBar position="static">
                 <Toolbar>
                     <LocationCity />
+
                     <Typography
                         variant="h6"
                         color="inherit"
@@ -40,7 +46,9 @@ export const Header: React.FC = () => {
                     >
                         Travel App (Team 98)
                     </Typography>
-
+                    <Language
+                        onChange={(lang) => props.onLanguageChange(lang)}
+                    />
                     <SearchInput />
                 </Toolbar>
             </AppBar>

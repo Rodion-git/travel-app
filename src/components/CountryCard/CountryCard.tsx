@@ -4,25 +4,18 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
+
+import { ICountry } from "../../entities/interfaces";
 
 const useStyles = makeStyles((theme) => ({
-    cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
-    },
     card: {
         height: "100%",
         display: "flex",
         flexDirection: "column",
         borderRadius: "10px",
-
-        "&:hover": {
-            border: "3px solid blue",
-            cursor: "pointer",
-        },
     },
     cardMedia: {
         paddingTop: "56.25%", // 16:9
@@ -34,28 +27,30 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const CountryCard: React.FC = () => {
+type CountryCardProps = { countryObj: ICountry };
+
+export const CountryCard: React.FC<CountryCardProps> = ({ countryObj }) => {
     const classes = useStyles();
 
     return (
-        <Grid item key="1" xs={12} sm={6} md={4}>
-            <Link href="#">
+        <Grid item key={countryObj.id} xs={12} sm={6} md={4}>
+            <Link to={`/country/${countryObj.id}`}>
                 <Card className={classes.card}>
                     <CardMedia
                         className={classes.cardMedia}
-                        image="https://source.unsplash.com/random"
-                        title="Название страны"
+                        image={countryObj.image}
+                        title={countryObj.country}
                     />
                     <CardContent
                         className={classes.cardContent}
                         style={{
-                            backgroundImage: `url(https://source.unsplash.com/random)`,
+                            backgroundImage: `url("${countryObj.image}")`,
                         }}
                     >
                         <Typography gutterBottom variant="h5" component="h2">
-                            Название страны
+                            {countryObj.country}
                         </Typography>
-                        <Typography>Сyтолица: Название столицы</Typography>
+                        <Typography>Столица: {countryObj.capital}</Typography>
                     </CardContent>
                 </Card>
             </Link>

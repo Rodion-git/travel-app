@@ -1,0 +1,18 @@
+.spiner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.map {
+    position: relative;
+}
+.map__body {
+    min-height: 400px ;
+}
+.map__error {
+    background-image: url(https://www.elegantthemes.com/blog/wp-content/uploads/2016/03/500-internal-server-error-featured-image-1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

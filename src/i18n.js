@@ -18,7 +18,7 @@ i18n.use(Backend)
         },
         lng: "be",
         backend: {
-            loadPath: "public/locales/{{lng}}/translation.json",
+            loadPath: "/public/locales/{{lng}}/translation.json",
             crossDomain: true,
         },
     });

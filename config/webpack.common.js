@@ -38,6 +38,7 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 9000,
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -45,6 +46,7 @@ module.exports = {
                 test: /\.(tsx|ts)$/,
                 use: "ts-loader",
                 exclude: /node_modules/,
+
             },
             {
                 test: /\.scss$/,
