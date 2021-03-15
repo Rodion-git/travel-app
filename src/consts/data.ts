@@ -1,7 +1,7 @@
 export default [
      {
         id: "1",
-        currId: '1',
+        currId: '290',
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
@@ -64,7 +64,7 @@ export default [
 
     {
         id: "2",
-        currId: '2',
+        currId: '298',
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
@@ -128,7 +128,7 @@ export default [
 
     {
         id: "3",
-        currId: '3',
+        currId: '145',
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",

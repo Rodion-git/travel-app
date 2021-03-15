@@ -10,7 +10,8 @@ export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await DBUtils.getCurrencyObj("290", "be");
+            const countryObj = DBUtils.getCountryObjectByLang(countryid, "be")
+            const result = await DBUtils.getCurrencyObj(countryObj.currId, "be");
 
             setCurrencyData(result);
         };
