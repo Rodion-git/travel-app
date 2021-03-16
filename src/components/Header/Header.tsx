@@ -8,6 +8,7 @@ import LocationCity from "@material-ui/icons/LocationCity";
 
 import { Language } from "./Language";
 import { SearchInput } from "./SearchInput";
+import {useParams} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,9 +47,11 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                     >
                         Travel App (Team 98)
                     </Typography>
+
                     <Language
                         onChange={(lang) => props.onLanguageChange(lang)}
                     />
+
                     <SearchInput />
                 </Toolbar>
             </AppBar>
