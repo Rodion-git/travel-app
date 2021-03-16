@@ -22,10 +22,10 @@ export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {
     return (
         <div className="currency-wrapper">
             <p>{currencyData?.name}</p>
-            <p>{currencyData?.scale}</p>
-            <p>{currencyData?.bynRate}</p>
-            <p>{currencyData?.eurRate}</p>
-            <p>{currencyData?.usdRate}</p>
+            <p>Scale: {currencyData?.scale}</p>
+            <p>BYN: {currencyData?.bynRate}</p>
+            <p>EUR: {currencyData?.eurRate}</p>
+            <p>USD: {currencyData?.usdRate}</p>
         </div>
     );
 };
