@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "56.25%", // 16:9
     },
     cardContent: {
-        color: "black",
+        color: "white",
         flexGrow: 1,
         backdropFilter: "blur(15px)",
     },

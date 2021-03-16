@@ -1,7 +1,7 @@
 export default [
     {
         id: "1",
-        currId: "1",
+        currId: "999",
         weatherID: 630336,
         iso3166Alpha3: "BLR",
         country: {
@@ -309,7 +309,7 @@ export default [
     },
     {
         id: "3",
-        currId: "3",
+        currId: "290",
         weatherID: 690791,
         iso3166Alpha3: "UKR",
         country: {
@@ -463,7 +463,7 @@ export default [
     },
     {
         id: "4",
-        currId: "4",
+        currId: "293",
         weatherID: 798544,
         iso3166Alpha3: "POL",
         country: {
@@ -617,7 +617,7 @@ export default [
     },
     {
         id: "5",
-        currId: "5",
+        currId: "292",
         weatherID: 597427,
         iso3166Alpha3: "LTU",
         country: {
@@ -771,7 +771,7 @@ export default [
     },
     {
         id: "6",
-        currId: "6",
+        currId: "292",
         weatherID: 458258,
         iso3166Alpha3: "LVA",
         country: {
@@ -925,7 +925,7 @@ export default [
     },
     {
         id: "7",
-        currId: "7",
+        currId: "301",
         weatherID: 1522867,
         iso3166Alpha3: "KAZ",
         country: {
@@ -1080,7 +1080,7 @@ export default [
     },
     {
         id: "8",
-        currId: "8",
+        currId: "292",
         iso3166Alpha3: "DEU",
         weatherID: 2921044,
         country: {

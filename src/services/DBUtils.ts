@@ -65,9 +65,15 @@ export class DBUtils {
 
     static async getCurrencyRate(id: string) {
         try {
-            const byn = await fetch(NBRB_CURRENCY_RATE_URL + id);
-            const bynData = await byn.json();
-            const bynDataRate = bynData.Cur_OfficialRate;
+            let bynDataRate = 0;
+
+            if (id != '999') {
+                const byn = await fetch(NBRB_CURRENCY_RATE_URL + id);
+                const bynData = await byn.json();
+                bynDataRate = bynData.Cur_OfficialRate;
+            } else {
+                bynDataRate = 1;
+            }
 
             const usd = await fetch(
                 NBRB_CURRENCY_RATE_URL + NBRB_CURRENCY_USD_ID

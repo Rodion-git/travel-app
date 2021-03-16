@@ -21,6 +21,17 @@ export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const countryObj = DBUtils.getCountryObjectByLang(countryid, language)
+            const result = await DBUtils.getCurrencyObj(countryObj.currId, language);
+
+            setCurrencyData(result);
+        };
+
+        fetchData();
+    }, [language]);
+
     return (
         <div className="currency-wrapper">
             <p>{currencyData?.name}</p>

@@ -4311,5 +4311,25 @@ export default [
         Cur_Periodicity: 1,
         Cur_DateStart: "2020-12-01T00:00:00",
         Cur_DateEnd: "2050-01-01T00:00:00"
+    },
+    {
+        Cur_ID: 999,
+        Cur_ParentID: 354,
+        Cur_Code: "928",
+        Cur_Abbreviation: "BYN",
+        Cur_Name: "Белорусский рубль",
+        Cur_Name_Bel: "Беларускі рубель",
+        Cur_Name_Eng: "Belarusian ruble",
+        Cur_QuotName: "100 Суверенных боливаров",
+        Cur_QuotName_Bel: "100 Суверэнных балівараў",
+        Cur_QuotName_Eng: "100 Bolivares Soberanos",
+        Cur_NameMulti: "Суверенных боливаров",
+        Cur_Name_BelMulti: "Суверэнных балівараў",
+        Cur_Name_EngMulti: "Bolivares Soberanos",
+        Cur_Scale: 1,
+        Cur_Periodicity: 1,
+        Cur_DateStart: "2020-12-01T00:00:00",
+        Cur_DateEnd: "2050-01-01T00:00:00"
     }
+
 ]
