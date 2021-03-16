@@ -3,8 +3,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
-import { CurrencyWidget } from "../components/CurrencyWidget/CurrencyWidget";
 import { ClockWidget } from "../components/ClockWidget/ClockWidget";
+import { CurrencyWidget } from "../components/CurrencyWidget/CurrencyWidget";
 
 const CountryPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
