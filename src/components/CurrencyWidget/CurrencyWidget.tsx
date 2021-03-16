@@ -1,17 +1,19 @@
-import React, {useEffect, useState} from "react";
-import {ICurrency} from "../../entities/interfaces";
+import React, {useContext, useEffect, useState} from "react";
+import {ICurrency, Lang} from "../../entities/interfaces";
 import {DBUtils} from "../../services/DBUtils";
+import LocaleContext from "../../LocaleContext";
 
 type CurrencyWidgetProps = { countryid: string };
 
 
 export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {
+    const language = useContext<Lang>(LocaleContext)
     const [currencyData, setCurrencyData] = useState<ICurrency>();
 
     useEffect(() => {
         const fetchData = async () => {
-            const countryObj = DBUtils.getCountryObjectByLang(countryid, "be")
-            const result = await DBUtils.getCurrencyObj(countryObj.currId, "be");
+            const countryObj = DBUtils.getCountryObjectByLang(countryid, language)
+            const result = await DBUtils.getCurrencyObj(countryObj.currId, language);
 
             setCurrencyData(result);
         };

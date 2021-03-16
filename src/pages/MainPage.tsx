@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
 import { CountryCard } from "../components/CountryCard";
-import { ICountry } from "../entities/interfaces";
+import {ICountry, Lang} from "../entities/interfaces";
 import { DBUtils } from "../services/DBUtils";
+import LocaleContext from "../LocaleContext";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -16,12 +17,19 @@ const useStyles = makeStyles((theme) => ({
 
 const MainPage: React.FC = () => {
     const classes = useStyles();
+    const language = useContext<Lang>(LocaleContext)
     const [countryList, setCountryList] = useState<ICountry[]>([]);
 
     useEffect(() => {
-        const arr = DBUtils.getCountryListByLang("be");
+        const arr = DBUtils.getCountryListByLang(language);
         setCountryList(arr);
     }, []);
+
+    useEffect(() => {
+        const arr = DBUtils.getCountryListByLang(language);
+        setCountryList(arr);
+
+    },[language]);
 
     return (
         <Container className={classes.cardGrid} maxWidth="md">
