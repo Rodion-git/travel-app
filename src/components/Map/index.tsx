@@ -4,11 +4,10 @@ import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import mapboxgl from "mapbox-gl";
 
-import "./map.scss";
+import styles from "./map.scss";
 
-// warning country name must be in iso_3166 format
+// warning country name must be in iso_3166_alpha_3 format
 // and conform to Mapbox Geocoding API
-// https://www.iso.org/obp/ui/#search alpha-2 code use
 
 const accessToken =
     "pk.eyJ1IjoiYXBpbWFwcyIsImEiOiJja20zcjVyNTcwbHRpMnJucmVwNG9qM3RmIn0.IpoJOP4vnLg3gGhHMVzfjA";
@@ -70,7 +69,7 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
                         )
                         .setFilter("country-boundaries", [
                             "in",
-                            "iso_3166_1",
+                            "iso_3166_1_alpha_3",
                             country,
                         ]);
                     layers.forEach((item) =>
@@ -87,10 +86,10 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
             });
     }, []);
     return (
-        <div className="map">
-            {check || error ? null : <CircularProgress className="spiner" />}
+        <div className={styles.map}>
+            {check || error ? null : <CircularProgress className={styles.spiner} />}
             <div
-                className={`map__body ${error ? "map__error" : ""}`}
+                className={`${styles.mapBody} ${error ? styles.mapError : ""}`}
                 ref={mapContainer}
             />
         </div>
