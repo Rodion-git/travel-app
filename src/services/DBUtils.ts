@@ -15,7 +15,7 @@ export class DBUtils {
         const arr = data.filter(item => item.id === id);
         const obj = arr[0];
         const attractionNew = obj.attractionList.map((item) => {
-            return {image: item.image, description: item.description[lang]}
+            return {image: item.image, title: item.title[lang], description: item.description[lang]}
         })
 
         return {
@@ -62,26 +62,36 @@ export class DBUtils {
     }
 
     static async getCurrencyRate(id: string) {
-        const byn = await fetch(NBRB_CURRENCY_RATE_URL + id)
-        const bynData = await byn.json();
-        const bynDataRate = bynData.Cur_OfficialRate;
+        try {
+            const byn = await fetch(NBRB_CURRENCY_RATE_URL + id);
+            const bynData = await byn.json();
+            const bynDataRate = bynData.Cur_OfficialRate;
 
-        const usd = await fetch(NBRB_CURRENCY_RATE_URL + NBRB_CURRENCY_USD_ID)
-        const usdData = await usd.json();
-        let usdDataRate = usdData.Cur_OfficialRate;
+            const usd = await fetch(NBRB_CURRENCY_RATE_URL + NBRB_CURRENCY_USD_ID)
+            const usdData = await usd.json();
+            let usdDataRate = usdData.Cur_OfficialRate;
 
-        const eur = await fetch(NBRB_CURRENCY_RATE_URL + NBRB_CURRENCY_EUR_ID)
-        const eurData = await eur.json();
-        let eurDataRate = eurData.Cur_OfficialRate;
+            const eur = await fetch(NBRB_CURRENCY_RATE_URL + NBRB_CURRENCY_EUR_ID)
+            const eurData = await eur.json();
+            let eurDataRate = eurData.Cur_OfficialRate;
 
-        usdDataRate = bynDataRate / usdDataRate;
-        eurDataRate = bynDataRate / eurDataRate;
+            usdDataRate = bynDataRate / usdDataRate;
+            eurDataRate = bynDataRate / eurDataRate;
 
 
-        return {
-            bynRate: String(Math.round((bynDataRate)*100)/100),
-            usdRate: String(Math.round((usdDataRate)*100)/100),
-            eurRate: String(Math.round((eurDataRate)*100)/100)
+            return {
+                bynRate: String(Math.round((bynDataRate) * 100) / 100),
+                usdRate: String(Math.round((usdDataRate) * 100) / 100),
+                eurRate: String(Math.round((eurDataRate) * 100) / 100)
+            }
+        } catch (e) {
+            console.error('Ошибка получения данных от НБ РБ', e);
+
+            return {
+                bynRate: 'НБ РБ не отвечает',
+                usdRate: 'НБ РБ не отвечает',
+                eurRate: 'НБ РБ не отвечает'
+            }
         }
     }
 
