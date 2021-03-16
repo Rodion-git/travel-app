@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
-import { ICurrency } from "../entities/interfaces";
-import { DBUtils } from "../services/DBUtils";
 import {CurrencyWidget} from "../components/CurrencyWidget/CurrencyWidget";
 
 const CountryPage: React.FC = () => {
