@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {Lang} from "../../entities/interfaces";
 import LocaleContext from "../../LocaleContext";
 import {vocabulary} from "../../consts/vocabulary";
+import {DBUtils} from "../../services/DBUtils";
 
 type ClockWidgetProps = { countryid: string };
 
@@ -9,9 +10,18 @@ type ClockWidgetProps = { countryid: string };
 export const ClockWidget: React.FC<ClockWidgetProps> = ({countryid}) => {
     const language = useContext<Lang>(LocaleContext)
     const [date, setDate] = useState<string>('');
+    const [offSetSec, setOffSetSec] = useState<number>(0);
 
     //Replaces componentDidMount and componentWillUnmount
     useEffect(() => {
+        const getOffsetSec = async () => {
+            const countryObj = DBUtils.getCountryObjectByLang(countryid, language)
+
+            setOffSetSec(countryObj.offsetSec);
+        };
+
+        getOffsetSec();
+
         let timerID = setInterval( () => clock(), 1000 );
 
         return function cleanup() {
@@ -22,7 +32,7 @@ export const ClockWidget: React.FC<ClockWidgetProps> = ({countryid}) => {
     function clock() {
         const date = new Date();
 
-        date.setSeconds(date.getSeconds() + date.getTimezoneOffset() * 60 + 10800);
+        date.setSeconds(date.getSeconds() + date.getTimezoneOffset() * 60 + offSetSec);
 
         const monthNum = date.getMonth();
         const dayNum = date.getDay();
