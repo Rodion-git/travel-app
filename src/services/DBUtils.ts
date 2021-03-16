@@ -15,7 +15,7 @@ export class DBUtils {
         const attractionNew = obj.attractionList.map((item) => {
             return {
                 image: item.image,
-                title: item.title[lang],
+                name: item.name[lang],
                 description: item.description[lang],
             };
         });
