@@ -1,7 +1,7 @@
 export default [
      {
         id: "1",
-        currId: '1',
+        currId: '290',
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
@@ -21,6 +21,11 @@ export default [
         attractionList: [
             {
                 image: '1.jpg',
+                title: {
+                  ru: "Привет",
+                  en: "Hello",
+                  be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 1",
                     en: "Attraction Description 1",
@@ -29,6 +34,11 @@ export default [
             },
             {
                 image: '2.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 2",
                     en: "Attraction Description 2",
@@ -37,6 +47,11 @@ export default [
             },
             {
                 image: '3.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 3",
                     en: "Attraction Description 3",
@@ -49,7 +64,7 @@ export default [
 
     {
         id: "2",
-        currId: '2',
+        currId: '298',
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
@@ -69,6 +84,11 @@ export default [
         attractionList: [
             {
                 image: '1.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 1",
                     en: "Attraction Description 1",
@@ -77,6 +97,11 @@ export default [
             },
             {
                 image: '2.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 2",
                     en: "Attraction Description 2",
@@ -85,6 +110,11 @@ export default [
             },
             {
                 image: '3.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 3",
                     en: "Attraction Description 3",
@@ -95,9 +125,10 @@ export default [
         videoId: 'SaTOst5utL8'
     },
 
+
     {
         id: "3",
-        currId: '3',
+        currId: '145',
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
@@ -117,6 +148,11 @@ export default [
         attractionList: [
             {
                 image: '1.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 1",
                     en: "Attraction Description 1",
@@ -125,6 +161,11 @@ export default [
             },
             {
                 image: '2.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 2",
                     en: "Attraction Description 2",
@@ -133,6 +174,11 @@ export default [
             },
             {
                 image: '3.jpg',
+                title: {
+                    ru: "Привет",
+                    en: "Hello",
+                    be: "Прывiтанне"
+                },
                 description: {
                     ru: "Описание Достопримечательности 3",
                     en: "Attraction Description 3",
@@ -142,4 +188,5 @@ export default [
         ],
         videoId: 'SaTOst5utL8'
     },
+
 ];

@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import LocationCity from "@material-ui/icons/LocationCity";
 
 import { SearchInput } from "./SearchInput";
+import {useParams} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,7 +41,6 @@ export const Header: React.FC = () => {
                     >
                         Travel App (Team 98)
                     </Typography>
-
                     <SearchInput />
                 </Toolbar>
             </AppBar>

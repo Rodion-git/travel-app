@@ -61,6 +61,7 @@ export const SearchInput: React.FC = () => {
                     root: classes.inputRoot,
                     input: classes.inputInput,
                 }}
+                type="search"
                 inputProps={{ "aria-label": "search" }}
             />
         </div>
