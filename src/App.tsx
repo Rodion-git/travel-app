@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useTranslation } from "react-i18next";
@@ -13,6 +13,7 @@ import CountryPage from "./pages/СountryPage";
 
 const App: React.FC = () => {
     const [language, setLanguage] = useState<Lang>("be");
+    const [searchTerm, setSearchTerm] = useState<string>("");
 
     const { i18n } = useTranslation();
 
@@ -25,12 +26,19 @@ const App: React.FC = () => {
         setLanguage(lang as Lang);
     };
 
+    const onSearchTermChange = (value: string) => {
+        setSearchTerm(value);
+    };
+
     return (
         <LocaleContext.Provider value={language}>
             <Router>
                 <React.Fragment>
                     <CssBaseline />
-                    <Header onLanguageChange={onLanguageChange} />
+                    <Header
+                        onLanguageChange={onLanguageChange}
+                        onSearchTermChange={onSearchTermChange}
+                    />
 
                     <main>
                         <Switch>
@@ -38,7 +46,16 @@ const App: React.FC = () => {
                                 component={CountryPage}
                                 path="/country/:id"
                             />
-                            <Route component={MainPage} exact path="/" />
+                            <Route
+                                render={(routeProps) => (
+                                    <MainPage
+                                        searchCountryTerm={searchTerm}
+                                        {...routeProps}
+                                    />
+                                )}
+                                exact
+                                path="/"
+                            />
                         </Switch>
                     </main>
                     <Footer />

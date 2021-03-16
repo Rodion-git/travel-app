@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 interface HeaderProps {
     onLanguageChange: (lang: string) => void;
+    onSearchTermChange: (value: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
@@ -54,7 +55,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                         onChange={(lang) => props.onLanguageChange(lang)}
                     />
 
-                    { !match && <SearchInput/> }
+                    { !match && <SearchInput onSearchTermChange={props.onSearchTermChange}/> }
                 </Toolbar>
             </AppBar>
         </div>

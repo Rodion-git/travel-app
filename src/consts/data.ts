@@ -155,7 +155,7 @@ export default [
     },
     {
         id: "2",
-        currId: "2",
+        currId: "298",
         weatherID: 2017370,
         iso3166Alpha3: "RUS",
         country: {
