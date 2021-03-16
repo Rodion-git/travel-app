@@ -2,7 +2,7 @@ export type Lang = 'en' | 'ru' | 'be';
 
 export interface IAttraction {
     image: string,
-    title: string,
+    name: string,
     description: string
 }
 

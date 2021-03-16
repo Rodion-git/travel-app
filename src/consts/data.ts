@@ -1,7 +1,7 @@
 export default [
     {
         id: "1",
-        currId: "1",
+        currId: "999",
         weatherID: 630336,
         iso3166Alpha3: "BLR",
         country: {
@@ -155,7 +155,7 @@ export default [
     },
     {
         id: "2",
-        currId: "2",
+        currId: "298",
         weatherID: 2017370,
         iso3166Alpha3: "RUS",
         country: {
@@ -172,7 +172,7 @@ export default [
             ru:
                 "Россия - самая большая страна в мире . Общей площадью 17 075 200 квадратных километров (6 592 800 квадратных миль). Это трансконтинентальная страна, охватывающая большую часть суши Евразии . Как в Европе, так и в Азии . Ее европейская часть площадью примерно 4 000 000 км 2 составляет около 40% всей суши Европы, что делает Россию самой большой страной в Европе а его азиатская часть , которая охватывает всю Северную Азию , составляет около 13 100 000 км 2 , что делает Россию самой большой страной в Азии . У него четвертая по длине береговая линияв мире - 37 653 км (23 396 миль).Это больше, по размеру, чем континенты в Океании , Европы и Антарктиды и находится между 41 ° и 82 ° северной широты и 19 ° восточной долготы и 169 ° западной долготы.",
             en:
-                "Russia the biggest country in the world . With a total area of ​​17,075,200 square kilometers (6,592,800 sq mi). It is a transcontinental country covering most of the landmass of Eurasia. Both in Europe and Asia. Its European part, with an area of ​​approximately 4,000,000 km 2, makes up about 40% of the entire land area of ​​Europe, which makes Russia the largest country in Europe, and its Asian part, which covers the whole of North Asia, is about 13,100,000 km 2, which makes Russia the largest country in Asia. It has the fourth longest coastline in the world at 37,653 km (23,396 mi), which is larger than the continents in Oceania, Europe and Antarctica and lies between 41 ° and 82 ° N and 19 ° E and 169 ° west longitude.",
+                "Russia the biggest country in the world . With a total area of 17,075,200 square kilometers (6,592,800 sq mi). It is a transcontinental country covering most of the landmass of Eurasia. Both in Europe and Asia. Its European part, with an area of ​​approximately 4,000,000 km 2, makes up about 40% of the entire land area of ​​Europe, which makes Russia the largest country in Europe, and its Asian part, which covers the whole of North Asia, is about 13,100,000 km 2, which makes Russia the largest country in Asia. It has the fourth longest coastline in the world at 37,653 km (23,396 mi), which is larger than the continents in Oceania, Europe and Antarctica and lies between 41 ° and 82 ° N and 19 ° E and 169 ° west longitude.",
             be:
                 "Расія - самая вялікая краіна ў свеце. Агульнай плошчай 17 075 за 200 квадратных кіламетраў (6 592 800 квадратных міль). Гэта Транскантынентальная краіна, якая ахоплівае большую частку сушы Еўразіі. Як у Еўропе, так і ў Азіі. Яе еўрапейская частка плошчай прыкладна 4 000 000 км 2 складае каля 40% усёй сушы Еўропы, што робіць Расію самай вялікай краінай у Еўропе а яго азіяцкая частка, якая ахоплівае ўсю Паўночную Азію, складае каля 13 100 000 км 2, што робіць Расію самай вялікай краінай у Азіі. У яго чацвёртая па даўжыні берагавая лінія свеце - 37 653 км (23 396 міль) .Гэта больш, па памеры, чым кантыненты ў Акіяніі, Еўропы і Антарктыды і знаходзіцца паміж 41 ° і 82 ° паўночнай шыраты і 19 ° усходняй даўгаты і 169 ° заходняй даўгаты.",
         },
@@ -309,7 +309,7 @@ export default [
     },
     {
         id: "3",
-        currId: "3",
+        currId: "290",
         weatherID: 690791,
         iso3166Alpha3: "UKR",
         country: {
@@ -463,7 +463,7 @@ export default [
     },
     {
         id: "4",
-        currId: "4",
+        currId: "293",
         weatherID: 798544,
         iso3166Alpha3: "POL",
         country: {
@@ -617,7 +617,7 @@ export default [
     },
     {
         id: "5",
-        currId: "5",
+        currId: "292",
         weatherID: 597427,
         iso3166Alpha3: "LTU",
         country: {
@@ -771,7 +771,7 @@ export default [
     },
     {
         id: "6",
-        currId: "6",
+        currId: "292",
         weatherID: 458258,
         iso3166Alpha3: "LVA",
         country: {
@@ -925,7 +925,7 @@ export default [
     },
     {
         id: "7",
-        currId: "7",
+        currId: "301",
         weatherID: 1522867,
         iso3166Alpha3: "KAZ",
         country: {
@@ -1080,7 +1080,7 @@ export default [
     },
     {
         id: "8",
-        currId: "8",
+        currId: "292",
         iso3166Alpha3: "DEU",
         weatherID: 2921044,
         country: {

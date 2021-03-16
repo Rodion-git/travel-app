@@ -47,8 +47,19 @@ const useStyles = makeStyles((theme: any) => ({
     },
 }));
 
-export const SearchInput: React.FC = () => {
+interface SearchInputProps {
+    onSearchTermChange: (value: string) => void;
+}
+
+export const SearchInput: React.FC<SearchInputProps> = (props: SearchInputProps) => {
     const classes = useStyles();
+
+    const handleChange = (
+        event: React.ChangeEvent<{ name?: string; value: unknown }>
+    ) => {
+        const str = event.target.value as string;
+        props.onSearchTermChange(str);
+    };
 
     return (
         <div className={classes.search}>
@@ -63,6 +74,7 @@ export const SearchInput: React.FC = () => {
                 }}
                 type="search"
                 inputProps={{ "aria-label": "search" }}
+                onChange={handleChange}
             />
         </div>
     );
