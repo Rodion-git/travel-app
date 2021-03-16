@@ -38,7 +38,7 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 9000,
-        historyApiFallback: true
+        historyApiFallback: true,
     },
     module: {
         rules: [
@@ -46,32 +46,14 @@ module.exports = {
                 test: /\.(tsx|ts)$/,
                 use: "ts-loader",
                 exclude: /node_modules/,
-
             },
             {
-                test: /\.scss$/,
-                use: [
-                    "style-loader",
-                    {
-                        loader: "dts-css-modules-loader",
-                        options: {
-                            namedExport: true,
-                            banner: "// This file is generated automatically",
-                        },
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            // options for the v4 of css-loader
-                            modules: {
-                                exportLocalsConvention: "camelCaseOnly",
-                                localIdentName:
-                                    "[name]__[local]___[hash:base64:5]",
-                            },
-                        },
-                    },
-                    "sass-loader",
-                ],
+                test: /\.s[ac]ss$/i,
+                use: ["style-loader", "css-loader", "sass-loader"],
+            },
+            {
+                test: /\.less$/,
+                use: ["style-loader", "css-loader", "less-loader"],
             },
             {
                 test: /\.(png|jpg|gif|ico)$/,
