@@ -14,7 +14,8 @@ export interface ICountry {
     description: string,
     image: string,
     attractionList: IAttraction[],
-    videoId: string
+    videoId: string,
+    offsetSec: number
 }
 
 export interface ICurrency {

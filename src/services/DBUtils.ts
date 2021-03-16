@@ -28,7 +28,8 @@ export class DBUtils {
             description: obj.description[lang],
             image: obj.image,
             attractionList: attractionNew,
-            videoId: "SaTOst5utL8",
+            videoId: obj.videoId,
+            offsetSec: obj.offsetSec
         };
     }
 
