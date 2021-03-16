@@ -1,45 +1,49 @@
-import React, { useEffect } from "react";
-import Container from "@material-ui/core/Container";
+import React, { useState } from "react";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { makeStyles } from "@material-ui/core/styles";
-
+import { useTranslation } from "react-i18next";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import MainPage from "./pages/MainPage";
-import CountryPage from "./pages/СountryPage";
-import { DBUtils } from "./services/DBUtils";
-
-import styles from "./app.scss";
-import { CountryCard } from "./components/CountryCard";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-
-
-const useStyles = makeStyles((theme) => ({
-    cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
-    },
-}));
+import LocaleContext from "./LocaleContext";
+import MainPage from "./pages/MainPage";
+import CountryPage from "./pages/СountryPage";
 
 const App: React.FC = () => {
-    const classes = useStyles();
+    const [language, setLanguage] = useState<string>("be");
+
+    const { i18n } = useTranslation();
+
+    const changeLanguage = (lang: string) => {
+        i18n.changeLanguage(lang);
+    };
+
+    const onLanguageChange = (lang: string) => {
+        changeLanguage(lang);
+        setLanguage(lang);
+    };
 
     return (
-        <Router>
-            <React.Fragment>
-                <CssBaseline />
-                <Header />
-                <main>
-                    <Switch>
-                        <Route component={CountryPage} path="/country/:id" />
-                        <Route component={MainPage} exact path="/" />
-                    </Switch>
-                </main>
-                <Footer />
-            </React.Fragment>
-        </Router>
+        <LocaleContext.Provider value={language}>
+            <Router>
+                <React.Fragment>
+                    <CssBaseline />
+                    <Header onLanguageChange={onLanguageChange} />
+
+                    <main>
+                        <Switch>
+                            <Route
+                                component={CountryPage}
+                                path="/country/:id"
+                            />
+                            <Route component={MainPage} exact path="/" />
+                        </Switch>
+                    </main>
+                    <Footer />
+                </React.Fragment>
+            </Router>
+        </LocaleContext.Provider>
     );
 };
 
