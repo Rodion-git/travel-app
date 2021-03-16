@@ -1,5 +1,7 @@
 import React from "react";
 
-const LocaleContext = React.createContext<string>("");
+import { Lang } from "./entities/interfaces";
+
+const LocaleContext = React.createContext<Lang>("be");
 
 export default LocaleContext;

@@ -6,12 +6,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { Lang } from "./entities/interfaces";
 import LocaleContext from "./LocaleContext";
 import MainPage from "./pages/MainPage";
 import CountryPage from "./pages/СountryPage";
 
 const App: React.FC = () => {
-    const [language, setLanguage] = useState<string>("be");
+    const [language, setLanguage] = useState<Lang>("be");
 
     const { i18n } = useTranslation();
 
@@ -21,7 +22,7 @@ const App: React.FC = () => {
 
     const onLanguageChange = (lang: string) => {
         changeLanguage(lang);
-        setLanguage(lang);
+        setLanguage(lang as Lang);
     };
 
     return (
