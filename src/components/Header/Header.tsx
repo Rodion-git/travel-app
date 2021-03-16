@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouteMatch } from 'react-router-dom';
 
 import AppBar from "@material-ui/core/AppBar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -8,7 +9,6 @@ import LocationCity from "@material-ui/icons/LocationCity";
 
 import { Language } from "./Language";
 import { SearchInput } from "./SearchInput";
-import {useParams} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,6 +31,8 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+    const match = useRouteMatch('/country/:id');
+
     const classes = useStyles();
 
     return (
@@ -52,7 +54,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                         onChange={(lang) => props.onLanguageChange(lang)}
                     />
 
-                    <SearchInput />
+                    { !match && <SearchInput/> }
                 </Toolbar>
             </AppBar>
         </div>
