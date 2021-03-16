@@ -11,7 +11,7 @@ export const Language: React.FC<LanguageProps> = (props: LanguageProps) => {
     const handleChange = (
         event: React.ChangeEvent<{ name?: string; value: unknown }>
     ) => {
-        const lang = (event.target.value as string).toLocaleLowerCase();
+        const lang = event.target.value as string;
         props.onChange(lang);
     };
 
