@@ -1,7 +1,8 @@
 import React, {useContext, useEffect, useState} from "react";
+
 import {ICurrency, Lang} from "../../entities/interfaces";
-import {DBUtils} from "../../services/DBUtils";
 import LocaleContext from "../../LocaleContext";
+import {DBUtils} from "../../services/DBUtils";
 
 type CurrencyWidgetProps = { countryid: string };
 

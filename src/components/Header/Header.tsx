@@ -1,13 +1,13 @@
 import React from "react";
-import { useRouteMatch } from 'react-router-dom';
 
 import AppBar from "@material-ui/core/AppBar";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import LocationCity from "@material-ui/icons/LocationCity";
+import { useRouteMatch } from "react-router-dom";
 
-import { Language } from "./Language";
+import { Language } from "../Language";
 import { SearchInput } from "./SearchInput";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,7 +32,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
-    const match = useRouteMatch('/country/:id');
+    const match = useRouteMatch("/country/:id");
 
     const classes = useStyles();
 
@@ -55,7 +55,11 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
                         onChange={(lang) => props.onLanguageChange(lang)}
                     />
 
-                    { !match && <SearchInput onSearchTermChange={props.onSearchTermChange}/> }
+                    {!match && (
+                        <SearchInput
+                            onSearchTermChange={props.onSearchTermChange}
+                        />
+                    )}
                 </Toolbar>
             </AppBar>
         </div>
