@@ -1,0 +1,22 @@
+.sliderImg {
+    position: relative;
+    padding-bottom: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat ;
+}
+.sliderInfo {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    right:10%;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 40px;
+    color: white;
+    padding: 15px 20px;
+    overflow: hidden;
+}
+.footerLogoBlock {
+    display: flex;
+    justify-content: center;
+}

@@ -1,4 +1,25 @@
-.cardGrid {
-  padding-top: 8px;
-  padding-bottom: 8px;
-},
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: "Roboto";
+}
+main {
+    flex: 1 0 auto;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+#root {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+}
+// @media (max-width: 900px) {
+//     .
+// }

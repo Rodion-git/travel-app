@@ -4,10 +4,8 @@ import { CircularProgress } from "@material-ui/core";
 import axios from "axios";
 import mapboxgl from "mapbox-gl";
 
-import styles from "./map.scss";
+import "./map.scss";
 
-// warning country name must be in iso_3166_alpha_3 format
-// and conform to Mapbox Geocoding API
 
 const accessToken =
     "pk.eyJ1IjoiYXBpbWFwcyIsImEiOiJja20zcjVyNTcwbHRpMnJucmVwNG9qM3RmIn0.IpoJOP4vnLg3gGhHMVzfjA";
@@ -17,6 +15,9 @@ type MapProps = {
     country: string;
     language: string;
 };
+
+const checkLang = (lang: string) => lang === "en" ? "en" : "ru" 
+
 const Map: React.FC<MapProps> = ({ country, language }) => {
     const mapContainer = useRef() as React.MutableRefObject<HTMLDivElement>;
     const [check, setCheck] = useState(false);
@@ -75,7 +76,7 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
                     layers.forEach((item) =>
                         map.setLayoutProperty(item, "text-field", [
                             "get",
-                            "name_" + language,
+                            "name_" + checkLang(language),
                         ])
                     );
                     setCheck(true);
@@ -84,12 +85,12 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
             .catch(() => {
                 setError(true);
             });
-    }, []);
+    }, [language]);
     return (
-        <div className={styles.map}>
-            {check || error ? null : <CircularProgress className={styles.spiner} />}
+        <div className={`map`}>
+            {check || error ? null : <CircularProgress className="spiner" />}
             <div
-                className={`${styles.mapBody} ${error ? styles.mapError : ""}`}
+                className={`mapBody ${error ? "mapError" : ""}`}
                 ref={mapContainer}
             />
         </div>

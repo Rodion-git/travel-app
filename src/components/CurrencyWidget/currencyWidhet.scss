@@ -1,0 +1,9 @@
+.currency-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    // flex-wrap: wrap;
+    font-weight: bold;
+}
+.currency-wrapper p {
+    margin-right: 5px;
+}
