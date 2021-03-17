@@ -9,10 +9,29 @@ import { DBUtils } from "../services/DBUtils";
 import LocaleContext from "../LocaleContext";
 
 const useStyles = makeStyles((theme) => ({
-    cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
+    banner : {
+      position: "absolute",
+      top: "0",
+      left: "0",
+      right: "0",
+      bottom: "55%",
+      backgroundPosition: "top",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundAttachment: "fixed",
+      borderRadius: "0 0 20px 20px",
+      backgroundImage: "url('/public/images/banner-1-min.jpg')"
     },
+    cards : {
+        position:"relative",
+        // height: "100%",
+        backgroundColor: "white",
+        borderRadius: "20px",
+        boxShadow: "0 0 5px 0 rgb(0 0 0 / 38%)",
+    },
+    container : {
+        height: "100%",
+    }
 }));
 
 interface MainPageProps {
@@ -30,7 +49,6 @@ const MainPage: React.FC<MainPageProps> = (props: MainPageProps) => {
         setCountryList(arr);
         setResultCountryList(arr);
     }, [language]);
-
     useEffect(() => {
         const results = countryList.filter(
             (country) =>
@@ -46,8 +64,9 @@ const MainPage: React.FC<MainPageProps> = (props: MainPageProps) => {
     }, [props.searchCountryTerm, countryList]);
 
     return (
-        <Container className={classes.cardGrid} maxWidth="md">
-            <Grid container spacing={4}>
+        <Container className={classes.container} maxWidth="md">
+          <div className={classes.banner}></div>
+            <Grid container spacing={4} className={classes.cards}>
                 {resultCountryList.length > 0 ? (
                     resultCountryList.map((country) => (
                         <CountryCard key={country.id} countryObj={country} />

@@ -2,8 +2,10 @@ import React, {useContext, useEffect, useState} from "react";
 import {ICurrency, Lang} from "../../entities/interfaces";
 import {DBUtils} from "../../services/DBUtils";
 import LocaleContext from "../../LocaleContext";
+import './currencyWidhet.scss';
 
 type CurrencyWidgetProps = { countryid: string };
+
 
 
 export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {

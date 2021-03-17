@@ -15,7 +15,10 @@ export interface ICountry {
     image: string,
     attractionList: IAttraction[],
     videoId: string,
-    offsetSec: number
+    offsetSec: number,
+    weatherID: number,
+    iso3166Alpha3 : string,
+
 }
 
 export interface ICurrency {
