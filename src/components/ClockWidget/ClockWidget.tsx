@@ -4,6 +4,7 @@ import { vocabulary } from "../../consts/vocabulary";
 import { Lang } from "../../entities/interfaces";
 import LocaleContext from "../../LocaleContext";
 import { DBUtils } from "../../services/DBUtils";
+import'./clockWidget.scss'
 
 type ClockWidgetProps = { countryid: string };
 

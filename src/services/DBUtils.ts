@@ -19,7 +19,6 @@ export class DBUtils {
                 description: item.description[lang],
             };
         });
-
         return {
             id: obj.id,
             currId: obj.currId,
@@ -30,6 +29,9 @@ export class DBUtils {
             attractionList: attractionNew,
             videoId: obj.videoId,
             offsetSec: obj.offsetSec,
+            weatherID: obj.weatherID,
+            iso3166Alpha3 : obj.iso3166Alpha3,
+
         };
     }
 

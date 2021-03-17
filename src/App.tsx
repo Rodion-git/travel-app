@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import './app.scss';
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";

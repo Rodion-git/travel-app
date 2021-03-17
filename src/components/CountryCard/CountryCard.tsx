@@ -12,18 +12,27 @@ import { ICountry } from "../../entities/interfaces";
 
 const useStyles = makeStyles((theme) => ({
     card: {
+        position: "relative",
         height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        borderRadius: "10px",
+        borderRadius: "20px",
+        '&:hover' : {
+            boxShadow: "0 0 5px 3px rgb(0 0 0 / 38%)",
+            transform: "translateY(-1%)"
+        } 
     },
     cardMedia: {
-        paddingTop: "56.25%", // 16:9
+        paddingTop: "100%",
+        paddingBottom: "20%",
     },
     cardContent: {
+        fontFamily : "Roboto",
+        position: "absolute",
+        left: "0",
+        bottom: "0",
+        right: "0",
         color: "white",
         flexGrow: 1,
-        backdropFilter: "blur(15px)",
+        backdropFilter: "blur(2px)",
     },
 }));
 
@@ -33,7 +42,7 @@ export const CountryCard: React.FC<CountryCardProps> = ({ countryObj }) => {
     const classes = useStyles();
 
     return (
-        <Grid item key={countryObj.id} xs={12} sm={6} md={4}>
+        <Grid item key={countryObj.id} xs={12} sm={6} md={4} >
             <Link to={`/country/${countryObj.id}`}>
                 <Card className={classes.card}>
                     <CardMedia
@@ -43,14 +52,11 @@ export const CountryCard: React.FC<CountryCardProps> = ({ countryObj }) => {
                     />
                     <CardContent
                         className={classes.cardContent}
-                        style={{
-                            backgroundImage: `url("${countryObj.image}")`,
-                        }}
                     >
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h6" component="h3">
                             {countryObj.country}
                         </Typography>
-                        <Typography>Столица: {countryObj.capital}</Typography>
+                        <Typography>{countryObj.capital}</Typography>
                     </CardContent>
                 </Card>
             </Link>

@@ -1,13 +1,15 @@
 import React from "react";
 
-import Link from "@material-ui/core/Link";
+import {Link , Container} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import './footer.scss';
 
 const useStyles = makeStyles((theme) => ({
     footer: {
-        backgroundColor: theme.palette.background.paper,
         padding: theme.spacing(6),
+        flex: "0 0 auto",
     },
 }));
 
@@ -16,25 +18,27 @@ export const Footer: React.FC = () => {
 
     return (
         <footer className={classes.footer}>
-            <Typography variant="h6" align="center" gutterBottom>
-                Footer
-            </Typography>
-            <Typography
-                variant="subtitle1"
-                align="center"
-                color="textSecondary"
-                component="p"
-            >
-                Something here to give the footer a purpose!
-            </Typography>
+            <Container maxWidth="md">
             <Typography variant="body2" color="textSecondary" align="center">
-                {"Copyright © "}
-                <Link color="inherit" href="https://material-ui.com/">
-                    Your Website
-                </Link>{" "}
-                {new Date().getFullYear()}
-                {"."}
+                <div className="footerBlock">
+                <Link color="inherit" href="https://github.com/NetZorro/" >
+                    <GitHubIcon />
+                    </Link>
+                <Link color="inherit" href="https://github.com/KarpusKonstantin/" >
+                    <GitHubIcon />
+                    </Link>
+                <Link color="inherit" href="https://github.com/Rodion-git" >
+                    <GitHubIcon />
+                    </Link>
+                </div>
+                <div className="footerLogoBlock">
+                <Link color="inherit" href="https://rs.school/js/" >
+                    <img className="logo" src={`/public/images/rs_school_js.svg`} />
+                </Link>
+                </div>
+                    2021
             </Typography>
+            </Container>
         </footer>
     );
 };

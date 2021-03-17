@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-import styles from "./weather.scss";
+import  "./weather.scss";
 
 type WatherProps = {
     language: string;
@@ -17,7 +17,7 @@ const upperCase = (str: string) => {
 const calcCelsia = (temp: number | string) => {
     return (Number(temp) - 273).toFixed(1);
 };
-const lang = (lang: string) => (lang === "ru" ? 1 : 0);
+const lang = (lang: string) => (lang === "en" ? 0 : 1);
 
 const errorText: string[] = [
     "No weather information",
@@ -58,18 +58,18 @@ const Wather: React.FC<WatherProps> = ({ language, weatherID }) => {
     const choice = lang(language!);
 
     return (
-        <div>
+        <div className="weather">
             {error ? (
                 <div>{errorText[choice]}</div>
             ) : (
                 <>
-                    <div className={styles.weatherInfo}>
+                    <div className={`weatherInfo`}>
                         <div>
                             <h2>{temp + "°"}</h2>
                             <h3>{text[choice]}</h3>
                         </div>
                         <img
-                            className={styles.weatherImg}
+                            className={`weatherImg`}
                             src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                         ></img>
                     </div>
