@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useTranslation } from "react-i18next";
-import './app.scss';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./app.scss";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Lang } from "./entities/interfaces";
 import LocaleContext from "./LocaleContext";
 import MainPage from "./pages/MainPage";
-import CountryPage from "./pages/CountryPage";
+import CountryPage from "./pages/СountryPage";
 
 const App: React.FC = () => {
     const [language, setLanguage] = useState<Lang>("be");
