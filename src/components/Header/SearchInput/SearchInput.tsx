@@ -3,8 +3,7 @@ import React, { useContext } from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
-import LocaleContext from "../../../LocaleContext";
-import {Lang} from "../../../entities/interfaces";
+import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useStyles = makeStyles((theme: any) => ({
@@ -44,8 +43,8 @@ interface SearchInputProps {
 }
 
 export const SearchInput: React.FC<SearchInputProps> = (props: SearchInputProps) => {
-    const lang = useContext<Lang>(LocaleContext)
     const classes = useStyles();
+    const { t } = useTranslation();
     
     const handleChange = (
         event: React.ChangeEvent<{ name?: string; value: unknown }>
@@ -60,7 +59,7 @@ export const SearchInput: React.FC<SearchInputProps> = (props: SearchInputProps)
                 <SearchIcon />
             </div>
             <InputBase
-                placeholder={lang === "ru"? "Поиск…" : lang === "en" ? "Search…" : "Пошук…"}
+                placeholder={t("placeholder.text")}
                 classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,

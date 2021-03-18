@@ -7,6 +7,7 @@ import { CountryCard } from "../components/CountryCard";
 import { ICountry, Lang } from "../entities/interfaces";
 import { DBUtils } from "../services/DBUtils";
 import LocaleContext from "../LocaleContext";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     banner : {
@@ -24,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     },
     cards : {
         position:"relative",
-        // height: "100%",
         backgroundColor: "white",
         borderRadius: "20px",
         boxShadow: "0 0 5px 0 rgb(0 0 0 / 38%)",
@@ -50,6 +50,7 @@ const MainPage: React.FC<MainPageProps> = (props: MainPageProps) => {
     const language = useContext<Lang>(LocaleContext);
     const [countryList, setCountryList] = useState<ICountry[]>([]);
     const [resultCountryList, setResultCountryList] = useState<ICountry[]>([]);
+    const { t } = useTranslation();
 
     useEffect(() => {
         const arr = DBUtils.getCountryListByLang(language);
@@ -79,7 +80,7 @@ const MainPage: React.FC<MainPageProps> = (props: MainPageProps) => {
                         <CountryCard key={country.id} countryObj={country} />
                     ))
                 ) : (
-                    <div className={classes.notFound}>{ language === "ru" ? "Ничего не найдено" : language === "be" ? "Нічога не знойдзена" : "Nothing found"}</div>
+                    <div className={classes.notFound}>{ t("searchResult.text")}</div>
                 )}
             </Grid>
         </Container>

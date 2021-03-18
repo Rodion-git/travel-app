@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
 
 import  "./weather.scss";
 
@@ -19,14 +20,9 @@ const calcCelsia = (temp: number | string) => {
 };
 const lang = (lang: string) => (lang === "en" ? 0 : lang === "ru" ? 1 : 2 );
 
-const errorText: string[] = [
-    "No weather information",
-    "Нет информации о погоде",
-    "няма інфармацыі аб надвор'і"
-];
-
 const Wather: React.FC<WatherProps> = ({ language, weatherID }) => {
     const [error, setError] = useState<boolean>(false);
+    const { t } = useTranslation();
     const [weather, setWeather] = useState<{
         temp: number | string;
         text: [string, string, string];
@@ -62,7 +58,7 @@ const Wather: React.FC<WatherProps> = ({ language, weatherID }) => {
     return (
         <div className="weather">
             {error ? (
-                <div>{errorText[choice]}</div>
+                <div>{t("weather.error")}</div>
             ) : (
                 <>
                     <div className={`weatherInfo`}>

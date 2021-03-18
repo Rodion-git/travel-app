@@ -4,5 +4,17 @@
         "capital": {
             "name": "Мінск"
         }
+    }, 
+    "placeholder" : {
+        "text" : "Пошук…"
+    },
+    "carrency" : {
+        "scale" : "Адзiнaк"
+    },
+    "searchResult" : {
+        "text" : "Нічога не знойдзена"
+    },
+    "weather" : {
+        "error" : "няма інфармацыі аб надвор'і"
     }
 }
