@@ -1,35 +1,48 @@
-import React, {useState} from "react";
-import Carousel from 'react-material-ui-carousel';
-import { Paper, makeStyles } from '@material-ui/core';
+import React, { useState } from "react";
 
-import './gallery.scss';
+import { Paper, makeStyles } from "@material-ui/core";
+import Carousel from "react-material-ui-carousel";
 
-type GalleryProps =  {
-    attractionList : any
-}
+import "./gallery.scss";
+
+type GalleryProps = {
+    attractionList: any;
+};
 
 const useStyles = makeStyles((theme) => ({
-    slider : {
+    slider: {
         borderRadius: "20px",
         marginBottom: "16px",
     },
-    heading : {
+    heading: {
         textAlign: "center",
         fontWeight: "bold",
     },
-}))
+}));
 
-const Gallery: React.FC<GalleryProps> = ({attractionList}) => {
+const Gallery: React.FC<GalleryProps> = ({ attractionList }) => {
     const classes = useStyles();
-    return <Carousel className={classes.slider}>
-            {attractionList.map((item : any, index: number) => {
-                return (<Paper key={index}>
-                    <div className="sliderImg" style={{backgroundImage : `url('${item.image}')` }}>
-                    <div className="sliderInfo" ><div className={classes.heading}>{item.name}</div>{item.description}</div>
-                    </div>
-                </Paper>)
+    return (
+        <Carousel className={classes.slider}>
+            {attractionList.map((item: any, index: number) => {
+                return (
+                    <Paper key={index}>
+                        <div
+                            className="sliderImg"
+                            style={{ backgroundImage: `url('${item.image}')` }}
+                        >
+                            <div className="sliderInfo">
+                                <div className={classes.heading}>
+                                    {item.name}
+                                </div>
+                                {item.description}
+                            </div>
+                        </div>
+                    </Paper>
+                );
             })}
-         </Carousel>
-}
+        </Carousel>
+    );
+};
 
 export default Gallery;

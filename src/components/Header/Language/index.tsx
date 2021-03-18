@@ -17,7 +17,13 @@ export const Language: React.FC<LanguageProps> = (props: LanguageProps) => {
 
     return (
         <>
-            <Select defaultValue="be" onChange={handleChange}>
+            <Select
+                MenuProps={{
+                    disableScrollLock: true,
+                }}
+                defaultValue="be"
+                onChange={handleChange}
+            >
                 <MenuItem value="be">Be</MenuItem>
                 <MenuItem value="ru">Ru</MenuItem>
                 <MenuItem value="en">En</MenuItem>
