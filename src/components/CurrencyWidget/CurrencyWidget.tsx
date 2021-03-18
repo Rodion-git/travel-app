@@ -3,6 +3,8 @@ import {ICurrency, Lang} from "../../entities/interfaces";
 import {DBUtils} from "../../services/DBUtils";
 import LocaleContext from "../../LocaleContext";
 import './currencyWidhet.scss';
+import { useTranslation } from 'react-i18next';
+
 
 type CurrencyWidgetProps = { countryid: string };
 
@@ -11,6 +13,7 @@ type CurrencyWidgetProps = { countryid: string };
 export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {
     const language = useContext<Lang>(LocaleContext)
     const [currencyData, setCurrencyData] = useState<ICurrency>();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,11 +36,11 @@ export const CurrencyWidget: React.FC<CurrencyWidgetProps> = ({countryid}) => {
 
         fetchData();
     }, [language]);
-
+    console.log(currencyData)
     return (
         <div className="currency-wrapper">
             <p>{currencyData?.name}</p>
-            <p>Scale: {currencyData?.scale}</p>
+            <p>{ t("carrency.scale")}: {currencyData?.scale}</p>
             <p>BYN: {currencyData?.bynRate}</p>
             <p>EUR: {currencyData?.eurRate}</p>
             <p>USD: {currencyData?.usdRate}</p>

@@ -16,7 +16,15 @@ type MapProps = {
     language: string;
 };
 
-const checkLang = (lang: string) => lang === "en" ? "en" : "ru" 
+const checkLang = (lang: string) => lang === "en" ? "en" : "ru" ;
+
+const filterCountry = (arr: [{id: string, wikidata: string}]) => {
+    for (let i = 0 ;i < arr.length; i++ ) {
+        if (/^country\./.test(arr[i].id)) {
+            return arr[i].wikidata;
+        }
+    }
+}
 
 const Map: React.FC<MapProps> = ({ country, language }) => {
     const mapContainer = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -37,15 +45,15 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
     ];
     useEffect(() => {
         axios(
-            `https://api.mapbox.com/geocoding/v5/mapbox.places/${country}.json?types=country&access_token=${accessToken}`
+            `https://api.mapbox.com/geocoding/v5/mapbox.places/${country}.json?access_token=${accessToken}`
         )
             .then((response) => {
-                const { center } = response.data.features[0];
+                const { center, context } = response.data.features[0]; 
                 const map: any = new mapboxgl.Map({
                     container: mapContainer.current,
                     style: "mapbox://styles/mapbox/streets-v11",
                     center,
-                    zoom: 4,
+                    zoom: 6,
                 });
                 map.on("load", () => {
                     new mapboxgl.Marker().setLngLat(center).addTo(map);
@@ -56,8 +64,7 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
                                 id: "country-boundaries",
                                 source: {
                                     type: "vector",
-                                    url:
-                                        "mapbox://mapbox.country-boundaries-v1",
+                                    url:"mapbox://mapbox.country-boundaries-v1",
                                 },
                                 "source-layer": "country_boundaries",
                                 type: "fill",
@@ -66,13 +73,10 @@ const Map: React.FC<MapProps> = ({ country, language }) => {
                                     "fill-opacity": 0.1,
                                 },
                             },
-                            "country-label"
+                            "country-label",
+                            
                         )
-                        .setFilter("country-boundaries", [
-                            "in",
-                            "iso_3166_1_alpha_3",
-                            country,
-                        ]);
+                        .setFilter("country-boundaries",["in","wikidata_id",filterCountry(context)]);
                     layers.forEach((item) =>
                         map.setLayoutProperty(item, "text-field", [
                             "get",

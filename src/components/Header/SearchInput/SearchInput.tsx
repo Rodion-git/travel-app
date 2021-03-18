@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useStyles = makeStyles((theme: any) => ({
     search: {
         position: "relative",
-        // borderRadius: theme.shape.borderRadius,
-        // backgroundColor: fade(theme.palette.common.white, 0.15),
         "&:hover": {
             backgroundColor: fade(theme.palette.common.white, 0.25),
         },
@@ -45,7 +44,8 @@ interface SearchInputProps {
 
 export const SearchInput: React.FC<SearchInputProps> = (props: SearchInputProps) => {
     const classes = useStyles();
-
+    const { t } = useTranslation();
+    
     const handleChange = (
         event: React.ChangeEvent<{ name?: string; value: unknown }>
     ) => {
@@ -59,7 +59,7 @@ export const SearchInput: React.FC<SearchInputProps> = (props: SearchInputProps)
                 <SearchIcon />
             </div>
             <InputBase
-                placeholder="Search…"
+                placeholder={t("placeholder.text")}
                 classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,

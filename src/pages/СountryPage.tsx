@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import { makeStyles, Container } from "@material-ui/core";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useParams } from "react-router-dom";
 
 import { ClockWidget } from "../components/ClockWidget/ClockWidget";
@@ -21,13 +20,11 @@ const useStyles = makeStyles((theme) => ({
         left: "0",
         right: "0",
         bottom: "55%",
-        backgroundPosition: "top",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         borderRadius: "0 0 20px 20px",
     },
-    root: (props: any) => ({ backgroundImage: props.img }),
     container: {
         position: "relative",
         padding: "16px",
@@ -45,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         top: "-13%",
         right: "0",
-        // transform: "translateX(-50%)",
         color: "white",
         fontSize: "12px",
         maxWidth: "320px",
@@ -55,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "20px",
         [theme.breakpoints.down(900)]: {
             position: "static",
-            maxWidth: "100%", // secondary
+            maxWidth: "100%",
         },
     },
     text: {
@@ -80,7 +76,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CountryPage: React.FC = () => {
-    const matches = useMediaQuery("(max-width: 900px)");
     const language = useContext<Lang>(LocaleContext);
     const { id } = useParams<{ id: string }>();
     const data = DBUtils.getCountryObjectByLang(id, language);
@@ -94,12 +89,13 @@ const CountryPage: React.FC = () => {
         capital,
         attractionList,
     } = data;
-    const classes = useStyles({ img: `url(${image})` });
-
-    console.log(data);
+    const classes = useStyles();
     return (
         <>
-            <div className={`${classes.banner} ${classes.root}`}></div>
+            <div
+                className={`${classes.banner}`}
+                style={{ backgroundImage: `url('${image}')` }}
+            ></div>
             <Container className={classes.container} maxWidth="md">
                 <div className={classes.vidzet}>
                     <CurrencyWidget countryid={id} />

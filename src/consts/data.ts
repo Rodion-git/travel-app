@@ -3,7 +3,7 @@ export default [
         id: "1",
         currId: "999",
         weatherID: 630336,
-        iso3166Alpha3: "BLR",
+        iso3166Alpha3: "Minsk",
         country: {
             ru: "Республика Беларусь",
             en: "Republic of Belarus",
@@ -128,7 +128,7 @@ export default [
         id: "2",
         currId: "298",
         weatherID: 2017370,
-        iso3166Alpha3: "RUS",
+        iso3166Alpha3: "Mos",
         country: {
             ru: "Российская Федерация",
             en: "Russian Federation",
@@ -254,7 +254,7 @@ export default [
         id: "3",
         currId: "290",
         weatherID: 690791,
-        iso3166Alpha3: "UKR",
+        iso3166Alpha3: "30.520507984081178%2C50.44987984209803",
         country: {
             ru: "Украина",
             en: "Ukraine",
@@ -379,7 +379,7 @@ export default [
         id: "4",
         currId: "293",
         weatherID: 798544,
-        iso3166Alpha3: "POL",
+        iso3166Alpha3: "21.007921377520574,52.231099468109136",
         country: {
             ru: "Польша",
             en: "Poland",
@@ -504,7 +504,7 @@ export default [
         id: "5",
         currId: "292",
         weatherID: 597427,
-        iso3166Alpha3: "LTU",
+        iso3166Alpha3: "Viln",
         country: {
             ru: "Литва",
             en: "Lithuania",
@@ -629,7 +629,7 @@ export default [
         id: "6",
         currId: "292",
         weatherID: 458258,
-        iso3166Alpha3: "LVA",
+        iso3166Alpha3: "riga",
         country: {
             ru: "Латвия",
             en: "Latvia",
@@ -754,7 +754,7 @@ export default [
         id: "7",
         currId: "301",
         weatherID: 1522867,
-        iso3166Alpha3: "KAZ",
+        iso3166Alpha3: "nur",
         country: {
             ru: "Казахстан",
             en: "Kazakhstan",
@@ -879,7 +879,7 @@ export default [
     {
         id: "8",
         currId: "292",
-        iso3166Alpha3: "DEU",
+        iso3166Alpha3: "berlin",
         weatherID: 2921044,
         country: {
             ru: "Германия",
