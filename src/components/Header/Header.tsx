@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   blockLang : {
     position: "absolute",
     top: "24px",
-    right : "24px",
+    left : "24px",
   }
 }));
 

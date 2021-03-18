@@ -31,6 +31,13 @@ const useStyles = makeStyles((theme) => ({
     },
     container : {
         height: "100%",
+    },
+    notFound : {
+        paddingLeft: "16px",
+        paddingTop: "16px",
+        minHeight: "30vh",
+        width: "100%",
+        textAlign: "center"
     }
 }));
 
@@ -72,7 +79,7 @@ const MainPage: React.FC<MainPageProps> = (props: MainPageProps) => {
                         <CountryCard key={country.id} countryObj={country} />
                     ))
                 ) : (
-                    <p>Нет данных</p>
+                    <div className={classes.notFound}>{ language === "ru" ? "Ничего не найдено" : language === "be" ? "Нічога не знойдзена" : "Nothing found"}</div>
                 )}
             </Grid>
         </Container>

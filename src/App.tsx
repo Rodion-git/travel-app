@@ -10,7 +10,7 @@ import { Header } from "./components/Header";
 import { Lang } from "./entities/interfaces";
 import LocaleContext from "./LocaleContext";
 import MainPage from "./pages/MainPage";
-import CountryPage from "./pages/СountryPage";
+import CountryPage from "./pages/CountryPage";
 
 const App: React.FC = () => {
     const [language, setLanguage] = useState<Lang>("be");
